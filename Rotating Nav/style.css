@@ -2,16 +2,146 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+p{
+  color: grey;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100wh;
-  overflow: hidden;
-  margin: 0;
+  background-color: rgba(48, 48, 48, 0.803);
+  overflow-x: hidden;
 }
+
+.container-full{
+  min-height: 100vh;
+  transition: 0.5s linear ;
+  transform-origin: top left;
+  width: 100%;
+  background-color: white;
+ 
+}
+
+.container{
+  width: 60%;
+  overflow: hidden;
+  padding:30px;
+  margin: 0 auto;
+  
+}
+
+.nav-icon{
+  height: 200px;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: orange;
+  margin-top: 50px;
+  border-radius: 50%;
+  margin-top: -90px;
+  margin-left: -90px;
+  transition: 1s;
+  
+}
+
+.nav-icon .icon i{
+  opacity: 0.8;
+  font-size: 35px;
+  transition: 1s;
+  margin-left: 35px;
+  margin-top:60px ;
+  color: white;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+nav{
+  margin-left: -80px;
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+nav ul li{
+  list-style-type: none;
+  margin-bottom: 30px;
+  color:white;
+  
+}
+
+.animation{
+  animation-delay: ;
+  animation-name: nav-anim;
+  animation-duration: 0.5s;
+  margin-bottom: 20px;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  
+}
+
+.animation-back{
+  animation-delay: ;
+  animation-name: nav-anim-back;
+  animation-duration: 0.5s;
+  margin-bottom: 20px;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  
+}
+
+
+.black-background{
+  background-color: grey;
+}
+
+.rotate{
+  
+  transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  -o-transform: rotate(-20deg);
+}
+
+.hide{
+  display: none;
+}
+
+
+@keyframes nav-anim {
+  0%{
+    margin-left: -50px;
+  }
+
+  100%{
+    margin-left: 30px;
+  }
+
+  
+}
+
+
+@keyframes nav-anim-back {
+  0%{
+    margin-left: 30px;
+  }
+
+  100%{
+    margin-left: -50px;
+  }
+
+  
+}
+
