@@ -41,9 +41,11 @@ button {
 
 .star {
 	color: grey;
+	font-size: 2rem;
 	display: inline-block;
 }
 
-.star:hover {
+.star:hover,
+.active {
 	color: gold;
 }

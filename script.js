@@ -3,18 +3,35 @@ const selectedRating = document.getElementById('selectedRating');
 
 let currentRating = 0;
 
-stars.forEach((star) => {
+for (let star of stars) {
 	star.addEventListener('click', () => {
 		const rating = parseInt(star.dataset.value);
 		if (rating === currentRating) {
-			// If the clicked star is the same as the current rating, reset the rating to 0.
 			currentRating = 0;
 		} else {
 			currentRating = rating;
+
+			for (let i = 0; i < rating; i++) {
+				stars[i].classList.add('active');
+			}
 		}
 		updateRating();
 	});
-});
+
+	star.addEventListener('mouseover', () => {
+		for (let star of stars) {
+			star.classList.remove('active');
+		}
+
+		const rating = parseInt(star.dataset.value);
+
+		if (rating > 1) {
+			for (let i = 0; i < rating - 1; i++) {
+				stars[i].classList.add('active');
+			}
+		}
+	});
+}
 
 function updateRating() {
 	selectedRating.textContent =
