@@ -33,3 +33,17 @@ button {
 	font-weight: 300;
 	font-size: 1rem;
 }
+
+.rating {
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.star {
+	color: grey;
+	display: inline-block;
+}
+
+.star:hover {
+	color: gold;
+}
