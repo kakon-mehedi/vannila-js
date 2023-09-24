@@ -46,6 +46,6 @@ thisArrowFn();
     Inside an object                  = current Object
 
     Arrow Function                    = window
-    Arrow Function inside object      =  
+    Arrow Function inside object      =  window
 
 */
