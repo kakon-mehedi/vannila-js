@@ -28,7 +28,7 @@ const resultSum = numberList.reduce(sumOfElements);
 
 /**
  * This function will modify sumList Array and put numberList sum of the consecutive array element.
- * @param {p} prev - This is the previous value of the array
+ * @param {p} prev - This is the previous value of the array, this is the previous value which is returned by the callback Fn
  * @param {*} current - current number
  * @param {*} currentIndex - index of the current number
  * @param {*} currentArr - current array
