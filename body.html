@@ -1,0 +1,680 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+	<title>On Call Report</title>
+	<style type="text/css">
+		body {
+			padding-left: 88px;
+			padding-right: 88px;
+			font-family: Arial, sans-serif;
+			font-size: 18px;
+			font-weight: normal;
+			line-height: 28px;
+			color: rgba(0, 0, 0, 0.87);
+		}
+
+		.content {
+			/* page-break-after: always; */
+		}
+
+		.w-100 {
+			width: 100%;
+		}
+
+		.font-size-20 {
+			font-size: 20px;
+			line-height: 23px;
+		}
+
+		.font-size-16 {
+			font-size: 16px;
+			line-height: 24px;
+		}
+
+		.font-size-14 {
+			font-size: 14px;
+			line-height: 20px;
+		}
+
+		.font-size-12 {
+			font-size: 12px;
+			line-height: 16px;
+		}
+
+		.font-size-10 {
+			font-size: 12px;
+			line-height: 16px;
+		}
+
+		.font-wight-500 {
+			font-weight: bold;
+		}
+
+		.address {
+			height: 110px;
+			width: 100%;
+			margin-bottom: 48px;
+		}
+
+		.post-address {
+			width: 50%;
+			float: left;
+		}
+
+		.billing-address {
+			/* width: 50%; */
+			/* float: right; */
+		}
+
+		.order-info {
+			width: 100%;
+			/* height: 180px; */
+			/* margin-bottom: 32px; */
+		}
+
+		.template-discription {
+			margin-bottom: 48px;
+			width: 100%;
+		}
+
+		.order-key {
+			width: 30%;
+			float: left;
+		}
+
+		.order-value {
+			width: 70%;
+			float: right;
+		}
+
+		p {
+			margin-top: 8px !important;
+			margin-bottom: 0px !important;
+		}
+
+		.mt-0 {
+			margin-top: 0px !important;
+		}
+
+		table,
+		tr {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+
+		.pt-16 {
+			margin-top: 16px !important;
+		}
+
+		.pl-12 {
+			padding-left: 12px !important;
+		}
+
+		.pr-12 {
+			padding-right: 12px !important;
+		}
+
+		td {
+			vertical-align: top;
+			text-align: start;
+			padding-top: 4px !important;
+		}
+
+		.align-right {
+			text-align: right;
+		}
+
+		.border-bottom {
+			border-bottom: 1px solid #E9E9E9;
+		}
+
+		.pb-0 {
+			padding-bottom: 0 !important;
+		}
+
+		.pt-0 {
+			padding-top: 0 !important;
+		}
+
+		.pb-12 {
+			padding-bottom: 12px !important;
+		}
+
+		.pb-8 {
+			padding-bottom: 8px !important;
+		}
+
+		.w-100 {
+			width: 100%;
+		}
+
+		.font-size-14-T {
+			font-size: 14px;
+			font-weight: 400 !important;
+			color: rgba(0, 0, 0, 0.87) !important;
+		}
+
+		.font-size-24 {
+			font-size: 24px;
+			font-weight: 400 !important;
+			color: rgba(0, 0, 0, 0.87) !important;
+		}
+
+		.pb-20 {
+			padding-bottom: 20px !important;
+		}
+
+		.mb-16 {
+			margin-bottom: 16px;
+		}
+
+		.mb-24 {
+			margin-bottom: 24px !important;
+		}
+
+		.font-weight-bold-T {
+			font-weight: 400 !important;
+			color: rgba(0, 0, 0, 0.87) !important;
+		}
+
+		.w-254 {
+			width: 25%;
+		}
+
+		.w-591 {
+			width: 75%;
+		}
+
+		.box-styles {
+			background: #FAFAFA;
+			border: 1px solid #D9D9D9;
+			box-sizing: border-box;
+			padding: 16px;
+			width: 100%;
+			font-size: 14px !important;
+			border-radius: 4px;
+		}
+
+		.box-styles1 {
+			background: white;
+			box-sizing: border-box;
+			padding: 16px;
+			width: 100%;
+			font-size: 14px !important;
+			border-radius: 4px;
+		}
+
+		.bblck {
+			width: 200px;
+			background-color: black;
+			float: right;
+			height: 24px;
+			color: white;
+			padding-top: 3px;
+		}
+
+		.bblck1 {
+			background-color: black;
+			color: white;
+			height: 32px;
+			padding-top: 8px;
+		}
+
+		.pr-20 {
+			padding-right: 20px;
+		}
+
+		.mt-6 {
+			margin-top: 6px !important;
+		}
+
+		.mt-0 {
+			margin-top: 0px !important;
+			margin-bottom: 12px;
+		}
+
+		.rules {
+			font-size: 16px !important;
+			line-height: 20px !important;
+			/* page-break-after: avoid !important; */
+		}
+
+		.rules .meta-key {
+			width: 20px;
+		}
+
+		.rules ul {
+			padding-left: 25px;
+			margin: 0;
+		}
+
+		.rules .List-items>li {
+			line-height: 16px;
+			position: relative;
+			list-style: none;
+		}
+
+		.rules .List-items>li::after {
+			position: absolute;
+			content: '-';
+			left: -14px;
+			top: 0;
+		}
+
+		.rules th {
+			text-align: start;
+		}
+
+		.rules td {
+			text-align: start;
+			padding: 0;
+		}
+
+
+		.w-30 {
+			width: 30% !important;
+		}
+
+		.pr-8 {
+			padding-right: 8px !important;
+		}
+
+		.align-center {
+			text-align: center;
+		}
+
+		.pt-8 {
+			padding-top: 8px !important;
+		}
+
+		.txt-dec {
+			text-transform: uppercase;
+		}
+
+		.mt-16 {
+			margin-top: 16px !important;
+		}
+
+		.pb-24 {
+			padding-bottom: 24px !important;
+		}
+
+		.pr-5 {
+			padding-right: 5px !important;
+		}
+
+		.w-12 {
+			width: 10%;
+		}
+
+		.w-52 {
+			width: 52%;
+		}
+
+		.bck-color-black {
+			background-color: black;
+			color: white;
+		}
+
+		.ls-75 {
+			letter-spacing: 0.75px !important;
+		}
+
+		.bck-color-gray {
+			background-color: gray;
+			color: white;
+		}
+
+		.h-12 {
+			height: 12px !important;
+		}
+
+		.h-16 {
+			height: 16px !important;
+		}
+
+		.h-18 {
+			height: 18px !important;
+		}
+
+		.bck-color-gray-light {
+			background-color: rgb(185, 181, 181);
+			color: black;
+		}
+
+		.dept-font {
+			font-size: 13px;
+			font-weight: 700;
+		}
+
+		.article-style {
+			font-size: 13px;
+			font-weight: 500;
+			padding-top: 0px !important;
+			padding-bottom: 0px !important;
+		}
+
+		.pl-30 {
+			padding-left: 30px !important;
+		}
+
+		.b-black {
+			background-color: black;
+			color: white;
+			padding-top: 6px;
+		}
+
+		.pl-15 {
+			padding-left: 15px !important;
+		}
+
+		.offer-info-table td {
+		   padding: 0;
+		   padding-right: 4px;
+	    }
+
+		.w-15-p{
+			width: 15% !important;
+		}
+		.w-14-p{
+			width: 14% !important;
+		}
+		.w-6-p{
+			width: 6% !important;
+		}
+		.w-18-p{
+			width: 18% !important;
+		}
+		.w-25-p{
+			width: 25% !important;
+		}
+
+		.w-35-p{
+			width: 35% !important;
+		}
+
+    .report-header {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-top: 2px solid black;
+      border-bottom: 2px solid black;
+    }
+    .report-header__content{
+      padding: 10px;
+      background-color: #808080;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+    }
+		.divider {
+			height: 1px;
+			border-top: 2px solid black;
+			background-color: black;
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+
+		.manpower-table tr {
+			border: 2px solid black;
+		}
+		.manpower-table tr > td  {
+			vertical-align:middle;
+		}
+		.w-48-p {
+			width: 48%;
+		}
+		.pl-20 {
+			padding-left: 15px;
+		}
+		.inline-block {
+			display: inline-block;
+		}
+	</style>
+
+</head>
+
+<body>
+
+
+
+	<div class="content">
+		{% for Project in metaInfo[0].Data %}
+		<table style="margin-bottom: 20px; width: 75%;">
+			<tr style="background-color: black; color: white; text-align: left;">
+				<th class="thh"><span class="pl-15 w-48-p inline-block align-left">PIKETTDOSSIER</span>  <span class=" w-48-p inline-block" style="text-align: right;">{{Project.ProjectStartDate}}</span>
+			</th>
+		</tr>
+		</table>
+      <div class="report-header">
+        <div class="report-header__content">{{Project.ProjectTitle}}</div>
+      </div>
+		
+			<!-- 2 column -->
+      <div class="order-info font-size-14">
+        <table class="w-100-p offer-info-table">
+            <tr>
+                <td class="container-p-tag  w-15-p">
+                    <p class="font-wight-500">Customer Address</p>
+                </td>
+                <td class="w-35-p">
+                  <div class="post-address">
+                    <p class="font-size-14">{{ Project.ClientAddress.ClientName}} <br>
+                      {{ Project.ClientAddress.Street}}
+                      {{ Project.ClientAddress.StreetNumber}}<br>
+                      {{ Project.ClientAddress.PostalCode}}
+                      {{ Project.ClientAddress.City }} <br>
+                    </p>
+                  </div>
+                </td>
+				<td class="container-p-tag font-wight-500 w-15-p">
+                  <p>Billing Address</p>
+              </td>
+              <td class="w-35-p">
+                <div class="billing-address">
+                  <p class="font-size-14">{{ Project.BillingAddress.ClientName }}<br>
+                    {{ Project.BillingAddress.Street }}
+                    {{ Project.BillingAddress.StreetNumber }}<br>
+                    {{ Project.BillingAddress.PostalCode }}
+                    {{ Project.BillingAddress.City }}<br>
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+             
+              <td class="container-p-tag font-wight-500 w-15-p">
+                  <p></p>
+              </td>
+              <td class="w-35-p">
+                  <p></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="container-p-tag font-wight-500 w-15-p">
+                  <p>Contact Person</p>
+              </td>
+              <td class="w-35-p">
+                  <p>{{ Project.ContactPerson }}</p>
+              </td>
+              <td class="container-p-tag font-wight-500 w-15-p">
+								<p>Meeting Point Remarks</p>
+						</td>
+						<td class="w-35-p">
+								<p>{{ Project.MeetingPointRemarks }}</p>
+						</td>
+            </tr>
+
+            <tr>
+              <td class="container-p-tag font-wight-500 w-15-p">
+                  <p>Project Location</p>
+              </td>
+              <td class="w-35-p">
+                  <p>{{ Project.ProjectLocation }}</p>
+              </td>
+              <td class="container-p-tag font-wight-500 w-15-p">
+								<p>Time</p>
+						</td>
+						<td class="w-35-p">
+								<p>{{ Project.ProjectStartTime }} - {{ Project.ProjectEndTime }}</p>
+						</td>
+            </tr>
+            <tr>
+              <td class="container-p-tag font-wight-500 w-15-p">
+                  <p>Date Range</p>
+              </td>
+              <td class="w-35-p">
+                  <p>{{ Project.ProjectStartDateRange }}</p>
+              </td>
+							<td class="container-p-tag font-wight-500 w-15-p">
+								<p>Parking Regulation</p>
+						</td>
+						<td class="w-35-p">
+								<p>{{ Project.ParkingRegulation }}</p>
+						</td>
+            </tr>
+            <tr>
+              <td class="container-p-tag font-wight-500 w-15-p">
+                  <p>Recurring Projects</p>
+              </td>
+              <td class="w-35-p">
+                  <p>{{ Project.IsRecurringProject }}</p>
+              </td>
+              <td class="container-p-tag font-wight-500 w-15-p">
+								<p>Wishlist</p>
+							</td>
+							<td class="w-35-p">
+								{% if Project.WishListSentCount > 0 %}
+									<p>Yes ({{ Project.WishListSentCount }})</p>
+								{% endif %}
+								{% if Project.WishListSentCount == 0 %}
+									<p>No (0)</p>
+								{% endif %}
+							</td>
+            </tr>
+
+            <tr>
+              <td class="container-p-tag font-wight-500 w-15-p">
+                  <p>Wishlist Deadline</p>
+              </td>
+              <td class="w-35-p">
+								{% if Project.WishlistDeadline %}
+                <p>{{ Project.WishlistDeadline }}</p>
+								{% endif %}
+								{% if Project.WishlistDeadline == null or Project.WishlistDeadline == "" %}
+                <p>-</p>
+								{% endif %}
+              </td>
+							<td class="container-p-tag font-wight-500 w-15-p">
+								<p>No. of Booked</p>
+						</td>
+						<td class="w-35-p">
+								<p>{{ Project.BookedCount }}</p>
+						</td>
+            </tr>
+            <tr>
+              <td class="container-p-tag font-wight-500 w-15-p">
+                  <p>Einstazleiter</p>
+              </td>
+              <td class="w-35-p">
+                  <p>{{ Project.Einstazleiter }}</p>
+              </td>
+							<td class="container-p-tag font-wight-500 w-15-p">
+								<p>KUV</p>
+						</td>
+						<td class="w-35-p">
+								<p>{{ Project.Kuv }}</p>
+						</td>
+            </tr>
+            <tr>
+              <td class="container-p-tag font-wight-500 w-15-p">
+                  <p>MAV</p>
+              </td>
+              <td class="w-35-p">
+                  <p>{{ Project.Mav }}</p>
+              </td>
+							<td class="container-p-tag font-wight-500 w-15-p">
+								<p>EV</p>
+						</td>
+						<td class="w-35-p">
+								<p>{{ Project.Ev }}</p>
+						</td>
+            </tr>
+        </table>
+      </div>
+			<div class="divider"></div>
+
+			<!-- Booked Employees -->
+			<table class="manpower-table">
+				<tr class="font-size-16 bck-color-black">
+					<td class="w-6-p align-left ls-75">Stag.</td>
+					<td class="w-15-p align-left ls-75">Name</td>
+					<td class="w-6-p align-left ls-75">Start</td>
+					<td class="w-6-p align-left ls-75">End</td>
+					<td class="w-18-p align-left ls-75">Em Segm</td>
+					<td class="w-14-p align-left ls-75">Dress Code</td>
+					<td class=" align-left ls-75">Remarks</td>
+				</tr>
+				{% for Staggering in Project.ManPowerData %}
+				<tr class="font-size-10 h-16">
+					<td class="align-left ls-75" style="padding-right: 10px;">{{Staggering.StaggeringNumber}}</td>
+					<td class="align-left" style="padding-right: 10px;">{{Staggering.Name}}</td>
+					<td class="align-left" style="padding-right: 10px;">{{Staggering.StartTime}}</td>
+					<td class="align-left" style="padding-right: 10px;">{{Staggering.EndTime}}</td>
+					<td class="align-left" style="padding-right: 10px;">
+				  {% for EmSegment in Staggering.EmSegments %}
+						<span>{{EmSegment}}</span>
+							<span> </span>
+					{% endfor %}
+					</td>
+					<td class="align-left" style="padding-right: 10px;">{{Staggering.DressCode}}</td>
+					<td class="align-left" style="padding-right: 10px;">{{ Staggering.Remarks }}</td>
+				</tr>
+				{% endfor %}
+			</table>
+
+				<!-- Reserved Employees -->
+				<div style="font-size: 18px; font-weight: 600; color: black; text-align: left; margin-top: 20px;">Reserved Employees</div>
+				<table class="manpower-table">
+					<tr class="font-size-16 bck-color-black">
+						<td class="w-6-p align-left ls-75">Stag.</td>
+						<td class="w-15-p align-left ls-75">Name</td>
+						<td class="w-6-p align-left ls-75">Start</td>
+						<td class="w-6-p align-left ls-75">End</td>
+						<td class="w-18-p align-left ls-75">Em Segm</td>
+						<td class="w-14-p align-left ls-75">Dress Code</td>
+						<td class=" align-left ls-75">Remarks</td>
+					</tr>
+					{% for Employees in Project.ReservedEmployees %}
+					<tr class="font-size-10 h-16">
+						<td class="align-left ls-75" style="padding-right: 10px;">{{Employees.StaggeringNumber}}</td>
+						<td class="align-left" style="padding-right: 10px;">{{Employees.Name}}</td>
+						<td class="align-left" style="padding-right: 10px;">{{Employees.StartTime}}</td>
+						<td class="align-left" style="padding-right: 10px;">{{Employees.EndTime}}</td>
+						<td class="align-left" style="padding-right: 10px;">
+						{% for EmSegment in Employees.EmSegments %}
+							<span>{{EmSegment}}</span>
+								<span> </span>
+						{% endfor %}
+						</td>
+						<td class="align-left" style="padding-right: 10px;">{{Employees.DressCode}}</td>
+						<td class="align-left" style="padding-right: 10px;">{{ Employees.Remarks }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+		</div>
+
+		{% endfor %}
+		
+		</div>
+</body>
+
+</html>
